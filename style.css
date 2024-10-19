@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+#rabbit {
+    position: absolute;
+    text-align: center;
+}
+
+#follow-text {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    animation: fadeText 4s infinite;
+}
+
+@keyframes fadeText {
+    0%, 100% {
+        color: black;
+    }
+    50% {
+        color: white;
+    }
+}
+
+/* Glitch effect for the rabbit */
+.glitch {
+    animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+    0%, 100% {
+        opacity: 1;
+        transform: none;
+    }
+    20% {
+        opacity: 0.1;
+        transform: skew(5deg, 2deg);
+    }
+    40% {
+        opacity: 1;
+        transform: none;
+    }
+    60% {
+        opacity: 0.1;
+        transform: skew(-5deg, -2deg);
+    }
+}
+
+/* Styling for the secret message */
+#secret-message {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: #ffcc00;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
