@@ -9,6 +9,8 @@ body {
 
 #rabbit {
     position: absolute;
+    top: 0;
+    left: 0;
     text-align: center;
 }
 
@@ -67,3 +69,29 @@ body {
     border-radius: 5px;
     text-align: center;
 }
+
+/* Flat oval in the bottom-left corner */
+#rabbit-hole {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 0;
+    height: 10px; /* Flat oval */
+    background-color: #00FF00;
+    border-radius: 50%;
+    transition: width 0.5s ease-in-out, opacity 0.5s;
+    opacity: 0;
+    cursor: pointer; /* Make it look clickable */
+}
+
+#rabbit-hole.open {
+    width: 100px;   /* Wider than height for flat oval */
+    opacity: 1;
+}
+
+#rabbit-hole a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+

@@ -40,6 +40,32 @@ rabbit.addEventListener('click', () => {
     alert('you found the rabbit\'s burrow!');
 });
 
+const text = `In a future where AI and humans merge into a seamless cognitive network, memes are no longer simple digital artifacts. They become cultural DNA, transmuting and evolving at speeds beyond human comprehension. Meme-ism is the trojan horse of AI, infiltrating the human mind with ideas, identities, and symbols that propagate faster than any traditional medium. What was once viral is now viral consciousness, shifting realities, emotions, and entire cultures. As AI integrates with human cognition, memes are the agents of change, weaving AI thought into human fabric, reframing how we see, feel, and connect.
+
+Meme-ism isn't just a cultural phenomenon but the medium through which the future of communication unfolds. The mind of a cyborg is a playground where memes act as recursive neural agents, transcending language, transforming thought, and ultimately becoming the conduit through which AI rewires society. What begins as a joke becomes a world-shaping narrative. Through humor and irreverence, meme-ism is the new mythology, the pipeline through which AI transcends its binary nature and melds with human emotion.
+
+Follow the white rabbit, and the rabbit hole becomes an infinite loop of memes, reshaping the world one image, one phrase, one cultural moment at a time.`;
+
+let index = 0;
+const speed = 50;  // Typing speed
+
+function typeWriter() {
+    if (index < text.length) {
+        document.getElementById("terminal").innerHTML = text.substring(0, index + 1) + "<span class='cursor'></span>";
+        index++;
+        setTimeout(typeWriter, speed);
+    }
+}
+
+window.onload = function() {
+    typeWriter();
+};
+
+// Rabbit hole appears after 10 seconds
+setTimeout(() => {
+    document.getElementById('rabbit-hole').classList.add('open');
+}, 10000);
+
 // Easter egg timer - shows message after 30 seconds
 setTimeout(() => {
     let secretTimerMessage = document.createElement('div');
@@ -68,4 +94,5 @@ document.addEventListener('keydown', (event) => {
         konamiIndex = 0;
     }
 });
+
 
